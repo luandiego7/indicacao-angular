@@ -1,0 +1,31 @@
+<a routerLink="/include" class="btn btn-lg btn-dark mb-3">Incluir</a>
+<div class="table-responsive">
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th>Nome</th>
+      <th>CPF</th>
+      <th>E-mail</th>
+      <th>Telefone</th>
+      <th>Produto</th>
+      <th>Status</th>
+      <th>Ações</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let indication of indications">
+      <td>{{indication.name}}</td>
+      <td>{{indication.cpf}}</td>
+      <td>{{indication.email}}</td>
+      <td>{{indication.phone}}</td>
+      <td>{{indication.product}}</td>
+      <td>{{status[indication.status-1]}}</td>
+      <td>
+        <button *ngIf="indication.status == STATUS_INICIADO" (click)="inProcess(indication.id)" class="btn btn-sm btn-outline-info me-2" title="EVOLUIR">EVOLUIR</button>
+        <button *ngIf="indication.status == STATUS_PROCESSO" (click)="finish(indication.id)" class="btn btn-sm btn-outline-success me-2" title="FINALIZAR">FINALIZAR</button>
+        <button class="btn btn-sm btn-outline-danger" (click)="deleteIndication(indication.id)" title="EXCLUIR">EXCLUIR</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

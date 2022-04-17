@@ -1,0 +1,57 @@
+<a routerLink="/" class="btn btn-lg btn-outline-dark mb-3 float-end">Voltar</a>
+<form [formGroup]="includeForm" (ngSubmit)="onSubmit(includeForm)">
+  <h1 class="h3 mb-3 fw-normal">INCLUIR</h1>
+
+  <div class="form-floating mb-4">
+    <input type="text" class="form-control" formControlName="name" [ngClass]="{'is-invalid':submitted && includeForm.controls['name'].errors}" id="name" maxlength="255" placeholder="Nome">
+    <label for="name">Nome</label>
+
+    <span *ngIf="submitted && includeForm.controls['name'].errors" class="text-danger">
+       <span  *ngIf="submitted && includeForm.controls['name'].errors['required']">Nome é obrigatório</span>
+    </span>
+  </div>
+
+  <div class="form-floating mb-4">
+    <input type="text" class="form-control" formControlName="cpf" [ngClass]="{'is-invalid':submitted && includeForm.controls['cpf'].errors}" (blur)="onBlurCheckCpf()" id="cpf" name="cpf" minlength="11" maxlength="11" placeholder="CPF">
+    <label for="cpf">CPF</label>
+
+    <span *ngIf="submitted && includeForm.controls['cpf'].errors" class="text-danger">
+      <div  *ngIf="submitted && includeForm.controls['cpf'].errors['required']">CPF é obrigatório</div>
+      <div  *ngIf="submitted && includeForm.controls['cpf'].errors['minlength']">CPF deve ter ao menos 11 números</div>
+      <div  *ngIf="submitted && includeForm.controls['cpf'].errors['maxlength']">CPF deve ter no máximo 11 números</div>
+      <div  *ngIf="submitted && includeForm.controls['cpf'].errors['cpfValidator']">CPF formato inválido</div>
+    </span>
+    <div class="text-danger" *ngIf="!checkCPF">CPF já indicado</div>
+  </div>
+  <div class="form-floating mb-4">
+    <input type="email" class="form-control" formControlName="email" [ngClass]="{'is-invalid':submitted && includeForm.controls['email'].errors}" id="email" name="email" maxlength="255" placeholder="exemplo@exemplo.com">
+    <label for="email">E-mail</label>
+
+    <span *ngIf="submitted && includeForm.controls['email'].errors" class="text-danger">
+      <div  *ngIf="submitted && includeForm.controls['email'].errors['required']">E-mail é obrigatório</div>
+      <div  *ngIf="submitted && includeForm.controls['email'].errors['email']">E-mail inválido</div>
+    </span>
+  </div>
+  <div class="form-floating mb-4">
+    <input type="text" class="form-control" formControlName="phone" [ngClass]="{'is-invalid':submitted && includeForm.controls['phone'].errors}" id="phone" name="phone" minlength="11" maxlength="14" placeholder="Telefone">
+    <label for="phone">Telefone</label>
+
+    <span *ngIf="submitted && includeForm.controls['phone'].errors" class="text-danger">
+      <div *ngIf="submitted && includeForm.controls['phone'].errors['required']">Telefone é obrigatório</div>
+      <div  *ngIf="submitted && includeForm.controls['phone'].errors['minlength']">Telefone deve ter ao menos 11 números</div>
+      <div  *ngIf="submitted && includeForm.controls['phone'].errors['maxlength']">Telefone deve ter no máximo 14 números</div>
+    </span>
+  </div>
+  <div class="form-floating mb-4">
+    <input type="text" class="form-control" formControlName="product" [ngClass]="{'is-invalid':submitted && includeForm.controls['product'].errors}" id="product" name="product" maxlength="255" placeholder="Produto">
+    <label for="product">Produto Indicado</label>
+
+    <span *ngIf="submitted && includeForm.controls['product'].errors" class="text-danger">
+       <span  *ngIf="submitted && includeForm.controls['product'].errors['required']">Produto é obrigatório</span>
+    </span>
+  </div>
+
+
+  <button class="w-100 btn btn-lg btn-primary" type="submit">INCLUIR</button>
+</form>
+

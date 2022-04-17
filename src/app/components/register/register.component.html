@@ -1,0 +1,22 @@
+<form (ngSubmit)="onSubmit(registerForm)"  #registerForm="ngForm">
+  <h1 class="h3 mb-3 fw-normal">REGISTRAR</h1>
+
+  <div class="form-floating mb-4">
+    <input type="text" class="form-control" id="name" name="name" placeholder="Nome" ngModel>
+    <label for="name">Nome</label>
+  </div>
+  <div class="form-floating mb-4">
+    <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" ngModel>
+    <label for="email">E-mail</label>
+  </div>
+  <div class="form-floating mb-4">
+    <input type="password" class="form-control" id="password" name="password" placeholder="Senha" ngModel>
+    <label for="password">Senha</label>
+  </div>
+  <div class="form-floating mb-4">
+    <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="Repita a senha" ngModel>
+    <label for="password_confirmation">Repita a senha</label>
+  </div>
+  <p class="text-danger pl-1" *ngIf="errors">{{errors}}</p>
+  <button class="w-100 btn btn-lg btn-primary" type="submit">REGISTRAR</button>
+</form>
