@@ -1,27 +1,28 @@
-# IndicacaoAngular
+# INDICAÇÃO - ANGULAR
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
+![version](https://img.shields.io/badge/version-13.3.3-blue.svg)
 
-## Development server
+Projeto de teste para indicações de produtos. Este é o projeto do lado do cliente, utilizando framework Angular.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Conheça o framework [Angular](https://angular.io/) 
 
-## Code scaffolding
+## Start project
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Recomendações para execução do projeto:
 
-## Build
+- Na pasta desejada execute no terminal de comando `git clone https://github.com/luandiego7/indicacao-angular.git`.
+- Dentro do projeto execute o comando `npm install`.
+- E em seguida execute o comando `ng serve` para iniciar o servidor para rodar o projeto.
+- Acesse o projeto através do seu navegador de preferência em `http://localhost:4200`.
+- Para poder utilizar todos os recursos, precisamos baixar e configurar o projeto do back-end antes.
+- Acesse `https://github.com/luandiego7/indicacao-laravel.git` e siga as instruções.
+- Em seguida, na tela do sistema, caso não tenha um usuário cadastrado, vá até o menu registrar e crie um para poder seguir.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Requisitos para execução do projeto:
 
-## Running unit tests
+- Node.js instalado (para uso do npm)
+- npm
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Documentação
+A documentação do Angular está disponível no [website](https://angular.io/).
